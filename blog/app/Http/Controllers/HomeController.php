@@ -22,7 +22,8 @@ public function form(Request $request){
 
 
 public function con(){
-	return View("home/vista");
+	$nombres = array('nombre1'=>'juan','nombre2'=>'carlos','nombre3'=>'andres','nombre4'=>'fabian');
+	return View("home/vista",['nombres'=>$nombres]);
 }
 
     
