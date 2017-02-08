@@ -3,27 +3,21 @@
 namespace App\Http\Controllers;
 
 use  App\http\Controller\Controllers;
+use illuminate\http\Request;
 
 class HomeController extends Controller
 {
 
-	public function index(){
-		return "Hola mundo desde laravel";
+
+//isMethod ----- has
+public function form(Request $request){
+	if ($request->isMethod("post") && $request->has("nombre")) {
+		 $name = $request->input("nombre");
+	}else{
+		$name = "";
 	}
-
-
-	public function vista(){
-		$jerez = "Que pasa hijueputa";
-		return view('vista',['jerez'=>$jerez]);
-	}
-
-
-	public function vista2(){
-		$array =  array("uno"=>"juan","dos"=>"mariana");
-		return view('vista',['array'=>$array]);
-	}
-
-
+	return View("home.form",["name"=>$name]);
+}
     
 }
 

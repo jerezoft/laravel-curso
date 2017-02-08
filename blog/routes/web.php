@@ -16,5 +16,5 @@ Route::get('/', function () {
 });
 
 
-Route::get('jerez/ñero','HomeController@vista2');
 
+Route::match(['get','post'],'home/form','HomeController@form');
