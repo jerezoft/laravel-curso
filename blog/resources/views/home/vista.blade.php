@@ -1,1 +1,6 @@
-<strong><h1>Hola Mundo</h1><strong>
+@extends('layouts.home')
+@section('title','Titulos del sitio web')
+@section('titulo','Hola mundo soy juan')
+
+
+	

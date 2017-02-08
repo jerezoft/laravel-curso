@@ -18,6 +18,7 @@ Route::get('/', function () {
 
 //mastch --recibe tanto get como post
 Route::match(['get','post'],'home/form','HomeController@form');
+Route::match(['get','post'],'home/vista','HomeController@con');
 
 
 Route::match(['get','post'],'home/suma','SumController@suma');
