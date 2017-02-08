@@ -18,6 +18,13 @@ public function form(Request $request){
 	}
 	return View("home.form",["name"=>$name]);
 }
+
+
+
+public function con(){
+	return View("home/vista");
+}
+
     
 }
 

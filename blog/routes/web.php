@@ -19,4 +19,19 @@ Route::get('/', function () {
 //mastch --recibe tanto get como post
 Route::match(['get','post'],'home/form','HomeController@form');
 
+
 Route::match(['get','post'],'home/suma','SumController@suma');
+
+Route::match(['post','get','put'],"home/nombre/{nombre}",function($nombre){
+
+	return "El valor de gumento nombres es ".$nombre;
+})->where(["nombre"=>"[a-zA-Z]+"]);
+
+Route::match(['post','get','put'],"home/nombre2/{nombre}/apellido/{apellido}",function($nombre,$apellido){
+
+	return "El valor de gumento nombres es ".$nombre." apellido ".$apellido;
+})->where(["nombre"=>"[a-zA-Z]+","apellido"=>"[a-zA-Z]+"]);
+
+
+
+
