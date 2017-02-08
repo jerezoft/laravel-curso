@@ -11,9 +11,10 @@
 
     </head>
   <body>
+  <div class="container">
     <h1>@yield('titulo')</h1>
     <p>@yield('content')</p>
- 
+ </div>
    
 
 

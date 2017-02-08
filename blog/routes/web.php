@@ -33,6 +33,10 @@ Route::match(['post','get','put'],"home/nombre2/{nombre}/apellido/{apellido}",fu
 	return "El valor de gumento nombres es ".$nombre." apellido ".$apellido;
 })->where(["nombre"=>"[a-zA-Z]+","apellido"=>"[a-zA-Z]+"]);
 
+#Me trae la vista
+Route::match(['post','get'],"home/miformulario",'HomeController@miformulario');
+#Valida el formulario
+Route::match(['post','get'],"home/validarformulario",'HomeController@validarMiFormulario');
 
 
 

@@ -26,6 +26,16 @@ public function con(){
 	return View("home/vista",['nombres'=>$nombres]);
 }
 
+
+public function miformulario(){
+
+		return View("home.miformulario");
+}
+
+public function validarMiFormulario(){
+		return "Hola";	
+}
+
     
 }
 
