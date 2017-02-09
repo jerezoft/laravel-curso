@@ -35,7 +35,7 @@ Route::match(['post','get','put'],"home/nombre2/{nombre}/apellido/{apellido}",fu
 
 
 
-Route::get('inicio/miformulario','HomeController@miformulario');
-Route::post('inicio/validarmiformulario','HomeController@validarmiformulario');
+Route::get('home/miformulario','HomeController@miformulario');
+Route::post('home/validarmiformulario','HomeController@validarmiformulario');
 
 

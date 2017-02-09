@@ -9,7 +9,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class Miformulario  extends FormRequest{
 
-	protected $redirect ='inicio/miformulario';
+	protected $redirect ='home/miformulario';
 
 	public function rules(){
 		return [
@@ -24,7 +24,7 @@ class Miformulario  extends FormRequest{
 				'nombre.min' => 'El minimo requerido son 3 caracteres',
 				'nomre.max'=>'El maxmino permitido son 12 caracteres',
 				'nombre.control'=> 'Solo se aceptan letras',
-				'correo.required'=>'correo requerido',
+				'correo.require'=>'correo requerido',
 				'correo.email'=>'dijite un email valido'
 		       ];
 

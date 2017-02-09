@@ -2,7 +2,12 @@
 @section('titulo','Validar Formulario')
 
 @section('content')
- <form method="post" action="{{url('inicio/validarmiformulario')}}">
+<div class="text-seccess">
+	@if(Session::has('message'))
+		{{Session::get('message')}}
+	@endif	
+</div>
+ <form method="post" action="{{url('home/validarmiformulario')}}">
 	<div class="form-group">
 		
 		<label for="nombre">Nombre:</label>
