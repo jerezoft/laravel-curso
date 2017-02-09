@@ -43,10 +43,16 @@ public function validarmiformulario(MiFormulario $formulario){
 	$Validator = Validator::make($formulario->all(),$formulario->rules(),$formulario->messages());
 
 	if ($Validator->valid()) {
+
+
+		if ($formulario->ajax()) {
+			return response()->json(["valid"=>true],200);
+		}
 			return redirect('home/miformulario')->with("message","formulario enviado correctamente");
 
 
 	}
+	return redirect('home/miformulario')->with("message","formulario enviado correctamente");
 
 }
 
