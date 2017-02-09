@@ -2,8 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use  App\http\Controller\Controllers;
-use illuminate\http\Request;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Http\FormRequest;
+use App\http\Requests\MiFormulario;
+use Validator;
+
+
+
 
 class HomeController extends Controller
 {
@@ -28,15 +34,20 @@ public function con(){
 
 
 public function miformulario(){
-
-		return View("home.miformulario");
-}
-
-public function validarMiFormulario(){
-		return "Hola";	
-}
-
-    
+	return View("home.miformulario");
 }
 
 
+public function validarmiformulario(MiFormulario $formulario){
+
+	$Validator = Validator::make($formulario->all(),$formulario->rules(),$formulario->messages());
+
+	if ($Validator->valid()) {
+		return 'ok';
+	}
+
+}
+
+
+
+}
