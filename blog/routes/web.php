@@ -38,4 +38,25 @@ Route::match(['post','get','put'],"home/nombre2/{nombre}/apellido/{apellido}",fu
 Route::get('home/miformulario','HomeController@miformulario');
 Route::post('home/validarmiformulario','HomeController@validarmiformulario');
 
+Route::group(['prefix'=>'apodo'],function(){
+	Route::get('nombre/{nombre?}',function($nombre='vacio'){
+			
+			return "hola ".$nombre;
 
+	});
+
+		Route::get('nombre2/{nombre}',function($nombre2='vacio'){
+			
+			return "hola =  ".$nombre2;
+
+	});
+
+
+	
+
+
+});
+
+
+
+Route::get('ruta/{numero?}','TestController@view');		
