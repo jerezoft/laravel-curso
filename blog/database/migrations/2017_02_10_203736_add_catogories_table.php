@@ -29,4 +29,13 @@ class AddCatogoriesTable extends Migration
     {
         Schema::dropIfExists('categories');
     }
+
+
+    public function Article(){
+
+        return $this->hasMany('App\Article');
+    }
+
+
+
 }

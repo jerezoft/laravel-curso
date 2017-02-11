@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model
 {
-    protected $table = "Tags";
+    protected $table = "tags";
     protected $fillable= ['name'];
-}
+
+
+    public function articles(){
+    	return $this->belogsToMany('\App\article')->withTimestamps();
+    }}										    
