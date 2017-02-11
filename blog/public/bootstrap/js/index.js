@@ -1,6 +1,7 @@
 $(document).ready(function() {
     
 
+$(function(){
 
 	$("#form").submit(function(e){
 
@@ -9,17 +10,15 @@ $(document).ready(function() {
 
 					if (data.valid !== undefined) {
 						$("#result").html("En hora buena formulario enviado correctamente");
-						$("#form")[0].reset();
-						$("#error_nombre").html('');
-							$("#error_email").html('');
+						
+					
 					}else{
-							$("#error_nombre").html('');
-							$("#error_email").html('');
+		
 						if (data.nombre !== undefined) {
 							$("#error_nombre").html(data.nombre);
 						}
-						if(data.email !== undefined){
-							$("#error_email").hrml(data.email);
+						if(data.correo !== undefined){
+							$("#error_email").html(data.correo);
 						}
 					}
 
@@ -28,6 +27,7 @@ $(document).ready(function() {
 
 			return false;
 	});
+})
 
 
 

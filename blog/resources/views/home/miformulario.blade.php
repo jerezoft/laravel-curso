@@ -28,39 +28,8 @@
 	{{csrf_field()}}
 	<button type="submit" class="btn btn-primary">Enviar</button>
 	</form>
-	<script>
-		
-$(function(){
-
-	$("#form").submit(function(e){
-
-			var fields  = $(this).serialize();
-			$.post("{{url('home/validarmiformulario')}}",fields,function(data){
-
-					if (data.valid !== undefined) {
-						$("#result").html("En hora buena formulario enviado correctamente");
-						$("#form")[0].reset();
-						$("#error_nombre").html('');
-						$("#error_email").html('');
-					}else{
-							$("#error_nombre").html('');
-							$("#error_email").html('');
-						if (data.nombre !== undefined) {
-							$("#error_nombre").html(data.nombre);
-						}
-						if(data.correo !== undefined){
-							$("#error_email").html(data.correo);
-						}
-					}
-
-			});
-
-
-			return false;
-	});
-})
-
-	</script>
+	
+	
 @stop
 
 
