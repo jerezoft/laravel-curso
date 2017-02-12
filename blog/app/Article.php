@@ -3,12 +3,26 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
 
-class Article extends Model
+
+
+class Article extends Model 
 {
-    
-
+    use Sluggable;
+  
     //fillable ->lleno
+
+  
+
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
+    }
 
 
     public function Category(){
