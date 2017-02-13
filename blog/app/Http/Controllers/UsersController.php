@@ -48,6 +48,7 @@ class UsersController extends Controller
 
             //---------PAQUETE DE MESAJES FLASH
           Flash::success('se ha registrado  '.$user->name.' de forma exitosa');
+
           return redirect()->route('users.index');
 
     }
@@ -71,10 +72,16 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
+    //-------------------------Funcion que sirve para editar usuario-------------------------//
     public function edit($id)
     {
-        //
+        $usuario = User::find($id);
+        return View('admin.users.edit')->with('user',$usuario);
     }
+
+    //-------------------------------------------------------
 
     /**
      * Update the specified resource in storage.
@@ -85,7 +92,13 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+            $user = User::find($id);
+            $user->name = $request->name;
+            $user->email =$request->email;
+            $user->type = $request->type;
+            $user->save();
+
+            dd($user);
     }
 
     /**
@@ -96,6 +109,12 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+      
+        $users = User::find($id);
+        $users->delete();
+
+       Flash::error('El usuario '.$users->name.' has sido borrado de forma exitosa');
+       return redirect()->route('users.index');
+
     }
 }

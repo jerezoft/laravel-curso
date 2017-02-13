@@ -33,8 +33,12 @@
 
 				 	</td>
 				 	<td>
-				 	   <a href="" class="btn btn-danger glyphicon glyphicon-trash"></a>
-					   <a href="" class="btn btn-warning glyphicon glyphicon-circle-arrow-down"></a>	
+				 	<!---                               Boton Editar                            -->
+				 	  <a href="{{ route('users.edit',$user->id) }}" class="btn  btn-warning glyphicon glyphicon-circle-arrow-down"></a>
+
+					<!--                                Boton Eliminar                           -->
+				 	  <a href="{{ route('admin.users.destroy',$user->id) }}" onclick="return confirm('¿Seguro que deseas eliminarlo?')" class="btn  btn-danger glyphicon glyphicon-trash "></a>	
+				 	   	 
 
 					</td>
 				 </tr>
