@@ -98,7 +98,8 @@ class UsersController extends Controller
             $user->type = $request->type;
             $user->save();
 
-            dd($user);
+            Flash::warning('El usuario '.$user->name.' ha sido editado con exito');
+            return redirect()->route('users.index');
     }
 
     /**

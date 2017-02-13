@@ -24,10 +24,10 @@
 				 	<td>{{ $user->email  }}</td>
 				 	<td>
 							@if($user->type == 'admin')
-								<span class="label label-danger">Danger</span>
+								<span class="label label-danger">Administrador</span>
 							@else
 
-								<span class="label label-primary">Primary</span>
+								<span class="label label-primary">Miembro</span>
 
 							@endif
 

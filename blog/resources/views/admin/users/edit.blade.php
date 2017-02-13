@@ -33,8 +33,9 @@
 			</div>
 
 			<div class="form-group">
+
 			{!! Form::label('type','tipo') !!}
-			{!! Form::select('type',[''=>'Selecciones un nivel','member'=>'miembro','admin'=>'Administrador'],null ,['class'=>'form-control']) !!}
+			{!! Form::select('type',['member'=>'miembro','admin'=>'Administrador'],null ,['class'=>'form-control']) !!}
 			</div>
 
 
