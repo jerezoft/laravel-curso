@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+#--IMPORTAMOS 
 use App\User;
 
 class UsersController extends Controller
@@ -11,36 +12,41 @@ class UsersController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
+
+
+
+     */ #-----------------LISTAR USUARIOS------------------------------
     public function index()
     {
-              
+                                           #---PAGINACION
+            $users = User::orderBy('id','asc')->paginate(5);
+                                            #--ENVISR PARAMETROS
+            return View('admin.users.index')->with('users',$users); 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+ #-----------------------FIN LISTAR-------------------------------------------
+
+
     public function create()
     {
        return View('admin.users.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
+
+#------------------------REGISTRAR USUARIO-------------------------------------  
     public function store(Request $request)
-    {
+    {                             #--Trae todos los datos    
           $user = new User($request->all());
+                            # Encripta la contraseña
           $user->password = bcrypt($request->password);
+          # Guarda los datos
           $user->save();
 
 
     }
+
+#------------------------FIN REGISTRO------------------------------------
 
     /**
      * Display the specified resource.
