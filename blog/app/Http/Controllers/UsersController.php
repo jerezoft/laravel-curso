@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 #--IMPORTAMOS 
 use App\User;
 use  Laracasts\Flash\Flash;
+use App\http\Requests\UserRequest;
+
 
 class UsersController extends Controller
 {
@@ -36,7 +38,7 @@ class UsersController extends Controller
 
 
 #------------------------REGISTRAR USUARIO-------------------------------------  
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {                             #--Trae todos los datos    
           $user = new User($request->all());
                             # Encripta la contraseña
@@ -93,9 +95,14 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
             $user = User::find($id);
+
+            /* SE PUEDE HACER DE ESTA MANERA
             $user->name = $request->name;
             $user->email =$request->email;
             $user->type = $request->type;
+            */
+            //O de esta manera fill remplaza lo qye esta en request a $request
+            $user->fill($request->all());
             $user->save();
 
             Flash::warning('El usuario '.$user->name.' ha sido editado con exito');
