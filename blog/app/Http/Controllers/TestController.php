@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 use Illuminate\Http\Request;
 use App\Article;

@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+/*
 //mastch --recibe tanto get como post
 Route::match(['get','post'],'home/form','HomeController@form');
 Route::match(['get','post'],'home/vista','HomeController@con');
@@ -52,11 +52,17 @@ Route::group(['prefix'=>'apodo'],function(){
 	});
 
 
-	
-
 
 });
 
 
 
-Route::get('ruta/{numero?}','TestController@view');		
+Route::get('ruta/{numero?}','TestController@view');	
+//----------------------CodigoFacilito----------------------	
+*/
+//-----------------admin---------------------------------------
+
+Route::group(['prefix'=>'admin'],function(){
+
+	Route::resource('users','UsersController');
+});
