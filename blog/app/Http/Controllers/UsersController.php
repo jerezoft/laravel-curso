@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 #--IMPORTAMOS 
 use App\User;
+use  Laracasts\Flash\Flash;
 
 class UsersController extends Controller
 {
@@ -41,8 +42,13 @@ class UsersController extends Controller
                             # Encripta la contraseña
           $user->password = bcrypt($request->password);
           # Guarda los datos
+      
           $user->save();
 
+
+            //---------PAQUETE DE MESAJES FLASH
+          Flash::success('se ha registrado  '.$user->name.' de forma exitosa');
+          return redirect()->route('users.index');
 
     }
 

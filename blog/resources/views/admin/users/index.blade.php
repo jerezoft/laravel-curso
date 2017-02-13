@@ -6,7 +6,8 @@
 @section('content')
 					<!-- REDIRJE AL CONTROLDOR QUE RECIBE ESTOS DATOS Y LOS GUARDA -->
 		<a href="{{ route('users.create') }}" class="btn btn-info">Registrar Nuevo Usuario</a><hr>
-	<table class="table table-striped table-responsive">
+	<div class="table-responsive">
+	<table class="table table-striped ">
 
 		<thead>
 			<th>Id</th>
@@ -40,5 +41,6 @@
 			@endforeach
 		</tbody>
 	</table>
+	</div>
 	{!! $users->render() !!}
 @endsection
