@@ -37,6 +37,8 @@
         {!! session('flash_notification.message') !!}
     </div>
 @endif
+@include('admin.template.partials.errores')  
+
 		
 		@yield('content')
 

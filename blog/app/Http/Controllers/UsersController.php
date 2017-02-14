@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\User;
 use  Laracasts\Flash\Flash;
 use App\http\Requests\UserRequest;
+use App\http\Request\CategoriesRequest;
 
 
 class UsersController extends Controller
