@@ -16,7 +16,7 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Inicio <span class="sr-only">(current)</span></a></li>
         <li><a href="{{ route('users.index') }}">Usurios</a></li>
-         <li><a href="#">Categorias</a></li>
+         <li><a href="{{ route('categories.index') }}">Categorias</a></li>
           <li><a href="#">Artilucos</a></li>
           <li><a href="#">Imagenes</a></li>
           <li><a href="#">Tags</a></li>
